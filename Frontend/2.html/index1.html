@@ -1,0 +1,70 @@
+<!--Design the web page using all the below input attributes
+type =text, password, submit, reset, radio, checkbox, button-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Types Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        .inline-label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Form with Different Input Types</h2>
+
+    <form>
+
+        <div class="input-group">
+            <label for="username">Username (text):</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+        </div>
+
+        <div class="input-group">
+            <label>Gender (radio):</label><br>
+            <label class="inline-label"><input type="radio" name="gender" value="male" required> Male</label>
+            <label class="inline-label"><input type="radio" name="gender" value="female"> Female</label>
+            <label class="inline-label"><input type="radio" name="gender" value="other"> Other</label>
+        </div>
+
+        <div class="input-group">
+            <label>Hobbies (checkbox):</label><br>
+            <label class="inline-label"><input type="checkbox" name="hobby" value="reading"> Reading</label>
+            <label class="inline-label"><input type="checkbox" name="hobby" value="traveling"> Traveling</label>
+            <label class="inline-label"><input type="checkbox" name="hobby" value="gaming"> Gaming</label>
+        </div>
+
+        <div class="input-group">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            <input type="button" value="Click Me" onclick="alert('Button clicked!')">
+        </div>
+
+    </form>
+
+</body>
+</html>

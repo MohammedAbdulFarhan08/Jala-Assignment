@@ -1,0 +1,123 @@
+<!--Use all the HTML5 tags and develop a web page
+article, aside, figcaption, figure,footer,header, hgroup,mark,nav, section,time-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Semantic Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    header, footer, nav, section, article, aside, figure {
+      padding: 20px;
+      margin: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #555;
+      color: white;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    section {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    article {
+      flex: 2;
+    }
+
+    aside {
+      flex: 1;
+      background-color: #eee;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    figcaption {
+      text-align: center;
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    mark {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <hgroup>
+      <h1>Explore Nature</h1>
+      <h2>Discover the beauty of the outdoors</h2>
+    </hgroup>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Gallery</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section>
+    <article>
+      <h2>A Journey Through the Forest</h2>
+      <p>On <time datetime="2025-05-17">May 17, 2025</time>, we went deep into the lush green forest and discovered a world of <mark>wonder</mark> and tranquility.</p>
+      
+      <figure>
+        <img src="https://ts4.mm.bing.net/th?id=OIP.Qre2m5rlYXCci5ee6iRVhAHaEo&pid=15.1" alt="Forest Image">
+        <figcaption>A peaceful forest view captured during our hike</figcaption>
+      </figure>
+
+      <p>The silence was broken only by the sounds of nature—birds chirping, leaves rustling, and the distant roar of a waterfall. It was a <mark>memorable</mark> experience.</p>
+    </article>
+
+    <aside>
+      <h3>Did You Know?</h3>
+      <p>Trees provide oxygen for us to breathe. One large tree can supply a day's oxygen for up to four people!</p>
+    </aside>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Explore Nature | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

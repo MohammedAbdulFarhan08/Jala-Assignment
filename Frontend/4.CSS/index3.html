@@ -1,0 +1,99 @@
+<!--3. Create a grid with of different types-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Grid Types</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    /* Basic Grid */
+    .basic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .basic-grid div {
+      background: #74b9ff;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    /* Named Areas Grid */
+    .named-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: 80px 100px;
+      grid-template-areas:
+        "header header"
+        "sidebar content";
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .header {
+      grid-area: header;
+      background: #0984e3;
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+    }
+    .sidebar {
+      grid-area: sidebar;
+      background: #55efc4;
+      padding: 15px;
+      border-radius: 6px;
+    }
+    .content {
+      grid-area: content;
+      background: #00b894;
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+    }
+
+    /* Responsive Grid */
+    .responsive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 12px;
+    }
+
+    .responsive-grid div {
+      background: #fd79a8;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Basic Grid</h2>
+  <div class="basic-grid">
+    <div>1</div><div>2</div><div>3</div>
+    <div>4</div><div>5</div><div>6</div>
+  </div>
+
+  <h2>Grid with Named Areas</h2>
+  <div class="named-grid">
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div class="content">Content Area</div>
+  </div>
+
+  <h2>Responsive Grid</h2>
+  <div class="responsive-grid">
+    <div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--4. Add padding and margin with different size and understand the difference between
+them-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Padding vs Margin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            background-color: #cce5ff;
+            border: 2px solid #004085;
+            width: 300px;
+            color: #004085;
+        }
+
+        .padding-box {
+            padding: 30px; /* Space inside the box */
+            margin-bottom: 20px; /* Space below the box */
+        }
+
+        .margin-box {
+            margin: 40px; /* Space outside the box */
+            padding: 10px; /* Less padding inside */
+        }
+
+        .info {
+            font-style: italic;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Understanding Padding and Margin</h2>
+
+    <div class="box padding-box">
+        <strong>Padding Box</strong>
+        <p>This box has <b>30px padding</b> (space inside) and 20px bottom margin.</p>
+    </div>
+
+    <div class="box margin-box">
+        <strong>Margin Box</strong>
+        <p>This box has <b>40px margin</b> (space outside) and only 10px padding.</p>
+    </div>
+
+    <div class="info">
+        <ul>
+            <li><strong>Padding</strong>: Adds space inside the element, between content and border.</li>
+            <li><strong>Margin</strong>: Adds space outside the element, between this element and others.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

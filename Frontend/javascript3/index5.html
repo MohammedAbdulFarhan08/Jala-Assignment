@@ -1,0 +1,33 @@
+<!--5. Create a JSON object and access it using dot notation.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Dot Notation</title>
+</head>
+<body>
+
+  <h2>Access JSON Data</h2>
+  <p id="output"></p>
+
+  <script>
+    // Create a JSON object
+    const student = {
+      name: "Farhan",
+      age: 21,
+      course: "Computer Science",
+      isEnrolled: true
+    };
+
+    // Accessing values using dot notation
+    let result = "Name: " + student.name + "<br>" +
+                 "Age: " + student.age + "<br>" +
+                 "Course: " + student.course + "<br>" +
+                 "Enrolled: " + student.isEnrolled;
+
+    // Display output
+    document.getElementById("output").innerHTML = result;
+  </script>
+
+</body>
+</html>

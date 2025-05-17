@@ -1,0 +1,79 @@
+<!--Apply all of the below input restrictions
+disabled, max, maxlength, min, readonly, required, size, value-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Restrictions Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 500px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 6px;
+        }
+        input, textarea {
+            padding: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Input Restrictions Example</h2>
+
+    <form>
+
+        <div class="input-group">
+            <label for="disabled-input">Disabled input:</label>
+            <input type="text" id="disabled-input" disabled value="Cannot edit me">
+        </div>
+
+        <div class="input-group">
+            <label for="max-input">Number with max = 100:</label>
+            <input type="number" id="max-input" max="100" value="50">
+        </div>
+
+        <div class="input-group">
+            <label for="maxlength-input">Text with maxlength = 10:</label>
+            <input type="text" id="maxlength-input" maxlength="10" placeholder="Max 10 chars">
+        </div>
+
+        <div class="input-group">
+            <label for="min-input">Number with min = 5:</label>
+            <input type="number" id="min-input" min="5" value="10">
+        </div>
+
+        <div class="input-group">
+            <label for="readonly-input">Readonly input:</label>
+            <input type="text" id="readonly-input" readonly value="Can't change this">
+        </div>
+
+        <div class="input-group">
+            <label for="required-input">Required input:</label>
+            <input type="text" id="required-input" required placeholder="Required field">
+        </div>
+
+        <div class="input-group">
+            <label for="size-input">Input with size = 5 :</label>
+            <input type="text" id="size-input" size="5" placeholder="5 chars wide">
+        </div>
+
+        <div class="input-group">
+            <label for="value-input">Input with preset value:</label>
+            <input type="text" id="value-input" value="Preset value">
+        </div>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+</body>
+</html>

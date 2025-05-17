@@ -1,0 +1,51 @@
+<!--4. Write functions to set a cookie, get a cookie and check a cookie in a single program.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie Example</title>
+</head>
+<body>
+
+  <h2>Cookie Example</h2>
+  <button onclick="setCookie('username', 'Farhan', 7)">Set Cookie</button>
+  <button onclick="checkCookie()">Check Cookie</button>
+
+  <p id="result"></p>
+
+  <script>
+    // Set a cookie
+    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    // Get a cookie
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // Check if cookie exists
+    function checkCookie() {
+      let user = getCookie("username");
+      if (user != "") {
+        document.getElementById("result").innerText = "Welcome back, " + user + "!";
+      } else {
+        document.getElementById("result").innerText = "Cookie not found.";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!--2. Develop a web page with the semantic elements <form>, <table> and <article>-->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+
+    article {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background-color: #eef;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Semantic Web Page</h1>
+
+  <article>
+    <h2>Welcome to Our Blog</h2>
+    <p>This is a sample <strong>article</strong> using semantic HTML. Articles are great for blog posts or news content.</p>
+    <p>Written by: <em>Admin</em></p>
+  </article>
+
+  <form action="#" method="post">
+    <h2>Contact Us</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>User List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ayesha</td>
+        <td>ayesha@example.com</td>
+        <td>Editor</td>
+      </tr>
+      <tr>
+        <td>Rahul</td>
+        <td>rahul@example.com</td>
+        <td>Subscriber</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

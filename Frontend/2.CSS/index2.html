@@ -1,0 +1,54 @@
+<!--Apply different visibility by an element (visibility: hidden, visible, collapse) and use
+different types of display for an element (display: none, inline, block, contents, list-item)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Visibility and Display Example</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <h2>CSS Visibility and Display Examples</h2>
+
+    <div class="section">
+        <h3>Visibility Examples</h3>
+
+        <div class="visible">I am visible</div>
+        <div class="hidden">I am hidden (but space is still reserved)</div>
+
+        <table class="collapse-table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>Farhan</td>
+                <td>22</td>
+            </tr>
+            <tr class="collapse-row">
+                <td>Hidden Row</td>
+                <td>Collapsed</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>Display Examples</h3>
+
+        <div class="none">This is display: none (won't be shown)</div>
+
+        <div class="inline">This is inline</div>
+        <div class="inline">Next to previous inline</div>
+
+        <div class="block">This is block</div>
+        <div class="block">Another block element</div>
+
+        <div class="contents">
+            <p>This is inside a display: contents (container disappears, but children remain)</p>
+        </div>
+
+        <div class="list-item">This is a list-item (without using <ul>)</div>
+    </div>
+
+</body>
+</html>

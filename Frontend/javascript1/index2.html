@@ -1,0 +1,44 @@
+<!--Create an array consisting of fruits names and when we click on a button sort it in
+descending order.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sort Fruits Descending</title>
+</head>
+<body>
+
+    <h2>Fruit List</h2>
+    <ul id="fruit-list">
+        <!-- Fruits will be displayed here -->
+    </ul>
+
+    <button onclick="sortDescending()">Sort Descending</button>
+
+    <script>
+        // Array of fruit names
+        let fruits = ["Apple", "Mango", "Banana", "Orange", "Pineapple", "Grapes"];
+
+        // Function to display fruits on the page
+        function displayFruits() {
+            const list = document.getElementById('fruit-list');
+            list.innerHTML = '';  // Clear existing list
+
+            fruits.forEach(fruit => {
+                const li = document.createElement('li');
+                li.textContent = fruit;
+                list.appendChild(li);
+            });
+        }
+
+        // Function to sort fruits in descending order and update display
+        function sortDescending() {
+            fruits.sort((a, b) => b.localeCompare(a));
+            displayFruits();
+        }
+
+        // Initial display when page loads
+        displayFruits();
+    </script>
+
+</body>
+</html>

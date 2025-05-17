@@ -1,0 +1,45 @@
+<!--Develop a page and set the height:(in pixels and %) and width:(in pixels and %) on
+elements.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Height and Width Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container using percentage width & height */
+        .percent-box {
+            width: 80%;
+            height: 50%;
+            background-color: #cce5ff;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Box using pixel width & height */
+        .pixel-box {
+            width: 300px;
+            height: 200px;
+            background-color: #ffcce0;
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body style="height: 100vh;"> <!-- Set body height for % to work -->
+
+    <div class="percent-box">
+        This box is 80% wide and 50% tall relative to the browser window.
+    </div>
+
+    <div class="pixel-box">
+        This box is 300px wide and 200px tall.
+    </div>
+
+</body>
+</html>

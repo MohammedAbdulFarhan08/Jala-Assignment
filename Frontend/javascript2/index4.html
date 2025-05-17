@@ -1,0 +1,37 @@
+<!--Create a Counter with the help of getter and setter accessors-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter with Getter and Setter</title>
+</head>
+<body>
+
+    <h2>Counter using Getter and Setter</h2>
+    <p>Count: <span id="countValue">0</span></p>
+    <button onclick="counter.count = counter.count + 1">Count</button>
+
+    <script>
+        const counter = {
+            _count: 0,  // private property (convention with _)
+
+            // Getter for count
+            get count() {
+                return this._count;
+            },
+
+            // Setter for count
+            set count(value) {
+                if (value >= 0) {  // optional validation
+                    this._count = value;
+                    // Update the UI whenever count changes
+                    document.getElementById('countValue').textContent = this._count;
+                }
+            }
+        };
+
+        // Initialize UI with starting count
+        document.getElementById('countValue').textContent = counter.count;
+    </script>
+
+</body>
+</html>

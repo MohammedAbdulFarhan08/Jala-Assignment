@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Object Properties Demo</title>
+</head>
+<body>
+
+    <h2>Person Object Properties</h2>
+
+    <p id="dot-notation"></p>
+    <p id="bracket-notation"></p>
+
+    <script>
+        // Create person object
+        const person = {
+            firstname: "John",
+            lastname: "Doe"
+        };
+
+        // Access using dot notation
+        document.getElementById('dot-notation').textContent = 
+            "Using dot notation: " + person.firstname + " " + person.lastname;
+
+        // Access using bracket notation
+        document.getElementById('bracket-notation').textContent = 
+            "Using bracket notation: " + person["firstname"] + " " + person["lastname"];
+    </script>
+
+</body>
+</html>

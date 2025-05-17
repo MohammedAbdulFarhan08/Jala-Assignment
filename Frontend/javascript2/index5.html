@@ -1,0 +1,40 @@
+<!--5. Add some more properties to an existing function using object prototypes.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prototypes Example</title>
+</head>
+<body>
+
+<script>
+    // Constructor function
+    function Person(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    // Adding a method using prototype
+    Person.prototype.fullName = function() {
+        return this.firstName + " " + this.lastName;
+    };
+
+    // Adding a new property using prototype
+    Person.prototype.nationality = "Indian";
+
+    // Creating an instance
+    const person1 = new Person("Virat", "Kohli");
+
+    console.log(person1.fullName());        // Output: Virat Kohli
+    console.log(person1.nationality);       // Output: Indian
+
+    // Changing prototype property for this instance only
+    person1.nationality = "Canadian";
+    console.log(person1.nationality);       // Output: Canadian
+
+    // New instance inherits the prototype property
+    const person2 = new Person("MS", "Dhoni");
+    console.log(person2.nationality);       // Output: Indian
+</script>
+
+</body>
+</html>

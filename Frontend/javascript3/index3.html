@@ -1,0 +1,96 @@
+<!--3. How console.log() can be used for Debugging.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>console.log() Debugging Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2em;
+    background: #f6f8fa;
+    color: #222;
+  }
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 1em;
+  }
+  pre {
+    background: #eaeaea;
+    padding: 1em;
+    border-radius: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+</style>
+</head>
+<body>
+  <h1>console.log() Debugging Demo</h1>
+  <button id="runDemoBtn">Run Debug Demo (Check Console)</button>
+
+  <p>Open your browser console (F12 or Ctrl+Shift+I) to view debugging logs.</p>
+
+  <script>
+    const runDemoBtn = document.getElementById('runDemoBtn');
+
+    runDemoBtn.addEventListener('click', function () {
+      console.clear();
+
+      // 1. Basic logging
+      let x = 42;
+      console.log("Value of x:", x);
+
+      // 2. Function execution tracking
+      function sum(a, b) {
+        console.log("sum() called with:", a, b);
+        let result = a + b;
+        console.log("Result is:", result);
+        return result;
+      }
+      sum(5, 8);
+
+      // 3. Inspecting objects and arrays
+      const user = {
+        name: "John",
+        age: 30,
+        hobbies: ["music", "sports", "coding"]
+      };
+      console.log("User object:", user);
+
+      // 4. Conditional logging
+      let score = 90;
+      if (score > 80) {
+        console.log("High score!:", score);
+      }
+
+      // 5. Loop debugging
+      for (let i = 0; i < 3; i++) {
+        console.log(`Loop iteration ${i}`);
+      }
+
+      // 6. Error handling logging
+      try {
+        throw new Error("Sample error for demonstration.");
+      } catch (error) {
+        console.log("Caught an error:", error.message);
+      }
+
+      // 7. Performance timing
+      console.time("ExampleTimer");
+      for (let i = 0; i < 1000000; i++) {
+        // simulate workload
+        let temp = i * i;
+      }
+      console.timeEnd("ExampleTimer");
+
+      // 8. Async code logging simulation
+      setTimeout(() => {
+        console.log("Async operation: Timeout finished");
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

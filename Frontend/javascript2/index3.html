@@ -1,0 +1,24 @@
+<!--Write a program for COUNTER. Whenever we click on a "Count" button, value
+should increment.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Counter</title>
+</head>
+<body>
+
+    <h2>Counter Example</h2>
+    <p>Count: <span id="countValue">0</span></p>
+    <button onclick="incrementCount()">Count</button>
+
+    <script>
+        let count = 0;
+
+        function incrementCount() {
+            count++; // increase count by 1
+            document.getElementById('countValue').textContent = count;
+        }
+    </script>
+
+</body>
+</html>

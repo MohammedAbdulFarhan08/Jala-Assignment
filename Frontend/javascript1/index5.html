@@ -1,0 +1,21 @@
+<!--Write a program with variable hoisting(initialization first then declaration)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Variable Hoisting Demo</title>
+</head>
+<body>
+
+    <h2>Variable Hoisting Example</h2>
+    <p id="demo"></p>
+
+    <script>
+        // Using the variable before declaration
+        x = 10;  // Initialize first (assign value)
+        var x;   // Declaration happens after initialization due to hoisting
+
+        document.getElementById('demo').textContent = "Value of x is: " + x;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!--4. Handling Overflow using scroll.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CSS Animations, Positions, Overflow & Pagination Demo</title>
+<style>
+  /* Reset & base */
+  body {
+    background: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2em;
+    line-height: 1.6;
+  }
+  h1, h2 {
+    text-align: center;
+    color: #4ade80; /* bright green */
+    text-shadow: 0 0 8px #22c55e;
+  }
+
+  /* Container for demo sections */
+  .section {
+    max-width: 700px;
+    margin: 3em auto;
+    background: #1f2937; /* dark slate */
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgb(34 197 94 / 0.5);
+  }
+
+  /* Animations */
+  .box {
+    margin: 1em auto 3em;
+    width: 120px;
+    height: 120px;
+    background: #22c55e;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #121212;
+    box-shadow: 0 0 10px #22c55e;
+  }
+
+  /* Position boxes */
+  .pos-container {
+    position: relative;
+    background: #111827;
+    color: #d1d5db;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 2em 1em 3em;
+    border-radius: 12px;
+    box-shadow: inset 0 0 40px #166534;
+    margin-bottom: 4em;
+    user-select: none;
+  }
+
+  .pos-box {
+    background: #22c55e;
+    border-radius: 10px;
+    color: #121212;
+    padding: 0.5em 1em;
+    width: 140px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #22c55e;
+    position: static; /* default */
+    margin-bottom: 1.5em;
+  }
+
+  /* specific positions */
+  .pos-static {
+    position: static;
+    border: 2px solid #4ade80;
+  }
+  .pos-relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    border: 2px solid #22c55e;
+  }
+  .pos-absolute {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 130px;
+    height: 70px;
+    background: #10b981;
+    color: #f3f4f6;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #10b981;
+  }
+  .pos-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 150px;
+    height: 70px;
+    background: #047857;
+    color: #d1fae5;
+    border-radius: 14px;
+    box-shadow: 0 0 20px #047857;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+    user-select: none;
+  }
+  .pos-sticky-wrapper {
+    background: #111827;
+    height: 200px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: inset 0 0 15px #665c00;
+  }
+  .pos-sticky {
+    position: sticky;
+    top: 0;
+    background: #a3e635;
+    color: #36454f;
+    padding: 0.5em 1em;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgb(163 230 53 / 0.9);
+  }
+
+  /* Overflow Scroll demo */
+  .overflow-demo {
+    background: #111827;
+    margin-top: 1em;
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: inset 0 0 40px #166534;
+  }
+
+  .overflow-scroll-vert {
+    width: 100%;
+    height: 150px;
+    overflow-y: auto;
+    background: #1f2937;
+    padding: 1em;
+    border-radius: 10px;
+    color: #a7f3d0;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 15px #22c55e;
+    margin-bottom: 2em;
+    line-height: 1.4;
+  }
+
+  .overflow-scroll-horz {
+    width: 100%;
+    height: 100px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: #1f2937;
+    padding: 1em;
+    border-radius: 10px;
+    color: #a7f3d0;
+    font-size: 0.95rem;
+    box-shadow: inset 0 0 15px #22c55e;
+  }
+  .overflow-scroll-horz span {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background: #22c55e;
+    border-radius: 8px;
+    color: #121212;
+    margin-right: 0.8em;
+    font-weight: 700;
+    box-shadow: 0 0 8px #22c55e;
+  }
+
+  /* Animation keyframes */
+  @keyframes pulseGlow {
+    0%, 100% {
+      box-shadow: 0 0 10px #22c55e;
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 30px #4ade80;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rotate360 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Boxes with different animations */
+  .pulse {
+    animation-name: pulseGlow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+  }
+  .slide {
+    animation-name: slideInRight;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+  .rotate {
+    animation-name: rotate360;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+    animation-timing-function: linear;
+  }
+
+  /* Pagination shared styles */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    margin: 1em 0 3em;
+    font-size: 1rem;
+  }
+  /* Pagination links */
+  .pagination a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #4ade80;
+    background-color: #374151;
+    border-radius: 8px;
+    box-shadow: inset 0 0 8px #22c55e;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  .pagination a:hover,
+  .pagination a:focus {
+    background-color: #22c55e;
+    color: #121212;
+    transform: scale(1.1);
+  }
+
+  /* Pagination with spaces (default gap) */
+  .pagination.spaced {
+    gap: 12px;
+  }
+
+  /* Pagination without spaces */
+  .pagination.nospaces {
+    gap: 0;
+  }
+  .pagination.nospaces a:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 1px solid #4ade80;
+  }
+  .pagination.nospaces a:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  /* Active page style */
+  .pagination a.active {
+    background-color: #16a34a;
+    font-weight: 700;
+    cursor: default;
+    box-shadow: 0 0 12px #16a34a;
+    transform: scale(1.15);
+  }
+</style>
+</head>
+<body>
+  <h1>CSS Animations, Positions, Overflow & Pagination Demo</h1>
+
+  <section class="section" aria-label="CSS Animations Examples">
+    <h2>CSS Animations</h2>
+
+    <div class="box pulse" aria-label="Green box with pulse glow animation">Pulse</div>
+    <div class="box slide" aria-label="Green box sliding in from right with delay">Slide-In</div>
+    <div class="box rotate" aria-label="Green box continuously rotating">Rotate</div>
+  </section>
+
+  <section class="section" aria-label="CSS Position Examples">
+    <h2>CSS Positions</h2>
+    <div class="pos-container" style="height:200px;">
+      <div class="pos-box pos-static" aria-label="Static position box">
+        static
+      </div>
+      <div class="pos-box pos-relative" aria-label="Relative position box">
+        relative
+      </div>
+      <!-- Absolute box placed inside relative container -->
+      <div class="pos-box pos-absolute" aria-label="Absolute position box">
+        absolute
+      </div>
+    </div>
+
+    <div class="pos-sticky-wrapper" aria-label="Scrollable container demonstrating sticky">
+      <div class="pos-sticky" aria-label="Sticky positioned box">
+        sticky (top:0)
+      </div>
+      <p style="margin-top:1em;">
+        Scroll inside this box to see the sticky box remain fixed at the top of this scrollable container.
+      </p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac luctus libero. Vestibulum hendrerit varius lacus ut porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer a vulputate nulla. Curabitur lobortis nec nulla et cursus. Nam luctus, lectus ut mollis bibendum, risus urna commodo arcu, eu convallis leo quam nec lorem. Morbi pretium tempus sapien in dapibus.</p>
+      <p>Phasellus ut libero consequat, malesuada nulla at, tristique eros. Morbi rhoncus lorem eget bibendum congue. Sed sodales metus id nulla imperdiet, ut condimentum purus maximus.</p>
+      <p>Vivamus in faucibus nisi. Integer porttitor, lorem vel blandit commodo, lorem augue bibendum quam, vel luctus ante est eu urna. Pellentesque a lorem vitae ex maximus egestas.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Handling Overflow with Scroll Examples">
+    <h2>Handling Overflow using Scroll</h2>
+    <div class="overflow-demo">
+      <h3>Vertical Scroll</h3>
+      <div class="overflow-scroll-vert" tabindex="0" aria-label="Vertically scrollable content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus maximus urna sed leo dictum, in blandit est mollis. Morbi dictum libero eget eleifend vehicula. Nulla facilisi. Sed malesuada aliquet nunc, a rutrum velit lacinia sit amet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+        <p>Donec ac nunc a mauris tincidunt varius. Maecenas laoreet, metus nec imperdiet lacinia, sapien sapien laoreet nibh, eu pellentesque mauris lorem sed metus. Nulla facilisi. Aliquam erat volutpat. Nullam venenatis malesuada purus, sed imperdiet dolor convallis in.</p>
+        <p>Integer vestibulum felis sed scelerisque blandit. Pellentesque ornare, leo nec venenatis consequat, neque sapien dignissim nulla, nec luctus turpis magna at nisi.</p>
+      </div>
+
+      <h3>Horizontal Scroll</h3>
+      <div class="overflow-scroll-horz" tabindex="0" aria-label="Horizontally scrollable content">
+        <span>Item 1</span><span>Item 2</span><span>Item 3</span><span>Item 4</span><span>Item 5</span><span>Item 6</span><span>Item 7</span><span>Item 8</span><span>Item 9</span><span>Item 10</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Pagination Examples">
+    <h2>Pagination with Spaces</h2>
+    <nav>
+      <div class="pagination spaced" role="navigation" aria-label="Pagination with spaces">
+        <a href="#" class="active" aria-current="page">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </nav>
+
+    <h2>Pagination without Spaces</h2>
+    <nav>
+      <div class="pagination nospaces" role="navigation" aria-label="Pagination without spaces">
+        <a href="#" class="active" aria-current="page">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+      </div>
+    </nav>
+  </section>
+
+  <!-- Fixed box outside container -->
+  <div class="pos-fixed" aria-label="Fixed position box">
+    fixed (bottom right)
+  </div>
+</body>
+</html>

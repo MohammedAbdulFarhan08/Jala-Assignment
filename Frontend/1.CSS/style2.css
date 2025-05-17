@@ -1,0 +1,31 @@
+.border-box {
+            width: 300px;
+            height: 150px;
+            padding: 20px;
+            margin: 50px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+
+            /* Border Widths */
+            border-top-width: 6px;
+            border-right-width: 4px;
+            border-bottom-width: 8px;
+            border-left-width: 2px;
+
+            /* Border Styles */
+            border-top-style: dashed;
+            border-right-style: solid;
+            border-bottom-style: dotted;
+            border-left-style: double;
+
+            /* Border Colors */
+            border-top-color: red;
+            border-right-color: green;
+            border-bottom-color: blue;
+            border-left-color: orange;
+
+            /* Combine into shorthand for clarity if needed:
+               border: 6px dashed red;
+            */
+}

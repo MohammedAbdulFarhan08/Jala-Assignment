@@ -1,0 +1,65 @@
+<!--5. Write a program of view-port for grid, media queries, image and video.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Viewport, Grid, Media Queries Example</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .box {
+      background: #74b9ff;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Media Query for smaller screens */
+    @media (max-width: 600px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Responsive Grid with Image & Video</h2>
+
+  <div class="grid-container">
+    <div class="box">
+      <h3>Image</h3>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Nature" />
+    </div>
+
+    <div class="box">
+      <h3>Video</h3>
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+</body>
+</html>

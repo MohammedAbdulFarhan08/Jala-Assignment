@@ -1,0 +1,60 @@
+.section {
+            margin: 20px;
+            padding: 15px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+        }
+
+        /* Visibility examples */
+        .visible {
+            visibility: visible;
+            background-color: #d4edda;
+            padding: 10px;
+        }
+
+        .hidden {
+            visibility: hidden;
+            background-color: #f8d7da;
+            padding: 10px;
+        }
+
+        .collapse-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .collapse-table td, .collapse-table th {
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        .collapse-row {
+            visibility: collapse;
+        }
+
+        /* Display examples */
+        .none {
+            display: none;
+        }
+
+        .inline {
+            display: inline;
+            background-color: lightyellow;
+        }
+
+        .block {
+            display: block;
+            background-color: lightblue;
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        .contents {
+            display: contents;
+        }
+
+        .list-item {
+            display: list-item;
+            list-style-type: square;
+            margin-left: 20px;
+        }

@@ -1,0 +1,53 @@
+<!--Show the javascript validation. When you click submit, the text box doesn't need to be empty.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple JS Validation</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 2em;
+    background: #f9f9f9;
+    color: #333;
+  }
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1rem;
+    margin-bottom: 0.5em;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  .error {
+    color: #b00020;
+    margin-bottom: 1em;
+  }
+  .success {
+    color: #007700;
+    margin-bottom: 1em;
+  }
+</style>
+</head>
+<body>
+  <form id="myForm" novalidate>
+    <div id="message"></div>
+    <input type="text" id="myInput" placeholder="Enter some text" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="second.js">
+    
+  </script>
+</body>
+</html>
