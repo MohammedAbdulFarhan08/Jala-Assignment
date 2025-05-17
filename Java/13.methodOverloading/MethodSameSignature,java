@@ -1,0 +1,16 @@
+/*3. Write two methods with the same name and same number of parameters of same type
+and call from main method */
+public class MethodSameSignature {
+    void compute(int a) {
+        System.out.println("Computing with int: " + a);
+    }
+
+    void compute(int b) {
+         System.out.println("Another int method"); // Compiler Error
+    }
+
+    public static void main(String[] args) {
+        MethodSameSignature obj = new MethodSameSignature();
+        obj.compute(100);
+    }
+}

@@ -1,0 +1,12 @@
+//2. Write a program to write text to .txt file using OutputStream
+
+import java.io.*;
+
+public class WriteWithOutputStream {
+    public static void main(String[] args) throws IOException {
+        FileOutputStream fos = new FileOutputStream("output.txt");
+        String data = "Writing with OutputStream.";
+        fos.write(data.getBytes());
+        fos.close();
+    }
+}
